@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "motion/react";
 import { cn } from "@/src/lib/utils";
 
@@ -12,7 +13,7 @@ export const AuroraBackground = ({
     <main>
       <div
         className={cn(
-          "relative flex flex-col h-[100vh] items-center justify-center bg-secondary text-white transition-bg",
+          "relative flex flex-col h-[100vh] items-center justify-center bg-obsidian text-foam transition-bg",
           className
         )}
         {...props}
@@ -22,8 +23,8 @@ export const AuroraBackground = ({
             className={cn(
               `
             [--white-gradient:linear-gradient(to_bottom,rgba(255,220,100,0.15)_0%,transparent_100%)]
-            [--dark-gradient:linear-gradient(to_bottom,rgba(26,17,2,0.5)_0%,transparent_100%)]
-            [--aurora:repeating-linear-gradient(100deg,var(--color-primary)_10%,var(--color-copper)_20%,var(--color-primary)_30%,var(--color-copper)_40%,var(--color-primary)_50%)]
+            [--dark-gradient:linear-gradient(to_bottom,rgba(10,10,10,0.5)_0%,transparent_100%)]
+            [--aurora:repeating-linear-gradient(100deg,var(--color-amber-gold)_10%,var(--color-bottle-green)_20%,var(--color-amber-gold)_30%,var(--color-bottle-green)_40%,var(--color-amber-gold)_50%)]
             [background-image:var(--white-gradient),var(--aurora)]
             [background-size:300%,_200%]
             [background-position:50%_50%,50%_50%]
@@ -58,18 +59,12 @@ export const TextGenerateEffect = ({
         <div className="leading-snug tracking-wide">
           {wordsArray.map((word, idx) => {
             return (
-              <motion.span
+              <span
                 key={word + idx}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{
-                  duration: 0.5,
-                  delay: idx * 0.1,
-                }}
-                className="text-primary"
+                className="text-amber-gold"
               >
                 {word}{" "}
-              </motion.span>
+              </span>
             );
           })}
         </div>
@@ -86,7 +81,7 @@ export const ShimmerButton = ({
   return (
     <button
       className={cn(
-        "group relative flex h-12 items-center justify-center overflow-hidden rounded-full bg-primary px-8 font-bold text-secondary transition-all hover:scale-105 active:scale-95",
+        "group relative flex h-12 items-center justify-center overflow-hidden rounded-full bg-amber-gold px-8 font-bold text-obsidian transition-all hover:scale-105 active:scale-95",
         className
       )}
       {...props}
@@ -145,11 +140,11 @@ export const BentoGridItem = ({
       <div className="group-hover/bento:translate-x-2 transition duration-200 z-10">
         <div className="flex items-center gap-2 mb-2">
           {icon}
-          <h3 className="font-bold text-primary text-lg uppercase tracking-wider">
+          <h3 className="font-display font-bold text-amber-gold text-lg uppercase tracking-wider">
             {title}
           </h3>
         </div>
-        <p className="font-normal text-cream/70 text-sm leading-relaxed">
+        <p className="font-normal text-foam/70 text-sm leading-relaxed">
           {description}
         </p>
       </div>
@@ -294,13 +289,13 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <React.Fragment key={item.name + idx}>
             <li
-              className="w-[150px] max-w-full relative rounded-2xl border border-white/10 flex-shrink-0 px-8 py-6 md:w-[200px] bg-charcoal/50 flex items-center justify-center glassmorphism group"
+              className="w-[150px] max-w-full relative rounded-2xl border border-white/10 flex-shrink-0 px-8 py-6 md:w-[200px] bg-obsidian/50 flex items-center justify-center glassmorphism group"
             >
-               <span className="text-xl font-bold text-cream/60 group-hover:text-primary transition-colors text-center">
+               <span className="text-xl font-display font-bold text-foam/60 group-hover:text-amber-gold transition-colors text-center">
                  {item.name}
                </span>
             </li>
-            <div className="flex-shrink-0 text-copper opacity-30">
+            <div className="flex-shrink-0 text-amber-gold opacity-30">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
               </svg>
@@ -352,33 +347,25 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      className="h-[35rem] overflow-y-auto flex justify-center relative space-x-10 rounded-3xl p-10 scrollbar-hide bg-secondary/50 border border-white/5 backdrop-blur-sm"
+      className="h-[35rem] overflow-y-auto flex justify-center relative space-x-10 rounded-3xl p-10 scrollbar-hide bg-bottle-green/10 border border-foam/5 backdrop-blur-sm"
       ref={ref}
     >
-      <div className="absolute inset-0 bg-primary/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-amber-gold/5 pointer-events-none" />
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                className="flex items-center gap-4 mb-4"
-              >
-                <div className="p-3 rounded-xl bg-primary/10 text-primary border border-primary/20">
+              <div className="flex items-center gap-4 mb-4">
+                <div className="p-3 rounded-xl bg-amber-gold/10 text-amber-gold border border-amber-gold/20">
                   {item.icon}
                 </div>
-                <h2 className="text-3xl font-bold text-primary uppercase tracking-tighter">
+                <h2 className="text-3xl font-display font-bold text-amber-gold uppercase tracking-tighter">
                   {item.title}
                 </h2>
-              </motion.div>
-              <motion.p
-                initial={{ opacity: 0 }}
-                animate={{ opacity: activeCard === index ? 1 : 0.3 }}
-                className="text-lg text-cream/70 max-w-sm mt-6 leading-relaxed"
-              >
+              </div>
+              <p className="text-lg text-foam/70 max-w-sm mt-6 leading-relaxed">
                 {item.description}
-              </motion.p>
+              </p>
             </div>
           ))}
           <div className="h-40" />
@@ -386,7 +373,7 @@ export const StickyScroll = ({
       </div>
       <motion.div
         className={cn(
-          "hidden lg:block h-80 w-[400px] rounded-2xl bg-charcoal sticky top-10 overflow-hidden neobrutalism border-copper",
+          "hidden lg:block h-80 w-[400px] rounded-2xl bg-obsidian sticky top-10 overflow-hidden neobrutalism border-amber-gold",
           contentClassName
         )}
       >
@@ -471,33 +458,21 @@ export const FloatingNav = ({
 }) => {
   const { scrollYProgress } = useScroll();
 
+  const { pathname } = useLocation();
+
   const [visible, setVisible] = useState(true);
 
-  useEffect(() => {
-    let previous = 0;
-    const unsubscribe = scrollYProgress.on("change", (current) => {
-      let direction = current - previous;
-
-      if (scrollYProgress.get() < 0.05) {
-        setVisible(true);
-      } else {
-        if (direction < 0) {
-          setVisible(true);
-        } else {
-          setVisible(false);
-        }
-      }
-      previous = current;
-    });
-    return () => unsubscribe();
-  }, [scrollYProgress]);
+  const isActive = (link: string) => {
+    if (link === "/" && (pathname === "/" || pathname === "/index")) return true;
+    return pathname === link;
+  };
 
   return (
     <AnimatePresence mode="wait">
       <motion.div
         initial={{
           opacity: 1,
-          y: -100,
+          y: 0,
         }}
         animate={{
           y: visible ? 0 : -100,
@@ -507,26 +482,27 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto rounded-full z-[5000] pr-2 pl-8 py-3 items-center justify-center space-x-6 glassmorphism",
+          "flex max-w-fit fixed top-10 inset-x-0 mx-auto rounded-full z-[5000] pr-2 pl-8 py-3 items-center justify-center space-x-6 glass-dark",
           className
         )}
       >
         {logo && (
-          <div className="flex items-center gap-2 pr-4 border-r border-white/10">
+          <Link to="/" className="flex items-center gap-2 pr-4 border-r border-foam/10">
             <img src={logo} alt="KAF Logo" className="h-8 w-auto object-contain" referrerPolicy="no-referrer" />
-          </div>
+          </Link>
         )}
         {navItems.map((navItem: any, idx: number) => (
-          <a
+          <Link
             key={`link=${idx}`}
-            href={navItem.link}
+            to={navItem.link}
             className={cn(
-              "relative items-center flex space-x-1 text-cream/70 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest"
+              "relative items-center flex space-x-1 text-foam/70 hover:text-amber-gold transition-colors text-sm font-medium uppercase tracking-widest",
+              isActive(navItem.link) && "text-amber-gold after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-amber-gold after:rounded-full"
             )}
           >
             <span className="block sm:hidden">{navItem.icon}</span>
             <span className="hidden sm:block">{navItem.name}</span>
-          </a>
+          </Link>
         ))}
         <ShimmerButton className="h-10 text-xs px-6">
           Peça no WhatsApp
@@ -608,7 +584,7 @@ export const Lens = ({
       {children}
       {isHovering && (
         <div
-          className="pointer-events-none absolute z-50 rounded-full border-2 border-primary/50 shadow-2xl overflow-hidden"
+          className="pointer-events-none absolute z-50 rounded-full border-2 border-amber-gold/50 shadow-2xl overflow-hidden"
           style={{
             width: lensSize,
             height: lensSize,
@@ -672,7 +648,7 @@ export const BeerGlassEffect = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-[40] overflow-hidden">
       {/* Liquid Amber Tint - Brighter and more vivid */}
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/20 via-primary/10 to-primary/25 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-b from-amber-gold/20 via-amber-gold/10 to-amber-gold/25 mix-blend-overlay" />
       
       {/* Caustics / Light Rays Effect - Enhanced */}
       <div className="absolute inset-0 opacity-30">
@@ -699,7 +675,7 @@ export const BeerGlassEffect = () => {
       
       {/* Liquid Ripples / Distortion (Simulated) */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent opacity-20"
+        className="absolute inset-0 bg-gradient-to-tr from-amber-gold/5 to-transparent opacity-20"
         animate={{
           scale: [1, 1.05, 1],
           rotate: [0, 1, 0],
