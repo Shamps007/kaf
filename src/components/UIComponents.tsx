@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, useScroll, useTransform, useMotionValue, useSpring, AnimatePresence } from "motion/react";
+import { Menu, X, MessageCircle } from "lucide-react";
 import { cn } from "@/src/lib/utils";
 
 export const AuroraBackground = ({
@@ -13,7 +14,7 @@ export const AuroraBackground = ({
     <main>
       <div
         className={cn(
-          "relative flex flex-col h-[100vh] items-center justify-center bg-obsidian text-foam transition-bg",
+          "relative flex flex-col h-[100vh] items-center justify-center bg-kaf-dark text-kaf-cream transition-bg",
           className
         )}
         {...props}
@@ -24,7 +25,7 @@ export const AuroraBackground = ({
               `
             [--white-gradient:linear-gradient(to_bottom,rgba(255,220,100,0.15)_0%,transparent_100%)]
             [--dark-gradient:linear-gradient(to_bottom,rgba(10,10,10,0.5)_0%,transparent_100%)]
-            [--aurora:repeating-linear-gradient(100deg,var(--color-amber-gold)_10%,var(--color-bottle-green)_20%,var(--color-amber-gold)_30%,var(--color-bottle-green)_40%,var(--color-amber-gold)_50%)]
+            [--aurora:repeating-linear-gradient(100deg,var(--color-kaf-gold)_10%,var(--color-kaf-dark)_20%,var(--color-kaf-gold)_30%,var(--color-kaf-dark)_40%,var(--color-kaf-gold)_50%)]
             [background-image:var(--white-gradient),var(--aurora)]
             [background-size:300%,_200%]
             [background-position:50%_50%,50%_50%]
@@ -61,7 +62,7 @@ export const TextGenerateEffect = ({
             return (
               <span
                 key={word + idx}
-                className="text-amber-gold"
+                className="text-kaf-gold"
               >
                 {word}{" "}
               </span>
@@ -73,26 +74,31 @@ export const TextGenerateEffect = ({
   );
 };
 
-export const ShimmerButton = ({
+export const ShimmerButton = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>(({
   children,
   className,
   ...props
-}: React.ButtonHTMLAttributes<HTMLButtonElement>) => {
+}, ref) => {
   return (
     <button
+      ref={ref}
       className={cn(
-        "group relative flex h-12 items-center justify-center overflow-hidden rounded-full bg-amber-gold px-8 font-bold text-obsidian transition-all hover:scale-105 active:scale-95",
+        "group relative flex h-12 items-center justify-center overflow-hidden rounded-full px-8 font-bold text-[#331c00] transition-all duration-300 active:scale-95",
+        "bg-gradient-to-r from-[#D4AF37] via-[#FFF380] to-[#D4AF37] bg-[length:200%_auto]",
+        "hover:bg-[position:right_center] hover:shadow-[0_0_20px_rgba(212,175,55,0.6)]",
+        "border border-[#FFF8D6]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]",
         className
       )}
       {...props}
     >
-      <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-20deg)_translateX(-100%)] group-hover:animate-shimmer">
-        <div className="relative h-full w-8 bg-white/40" />
+      <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-20deg)_translateX(-150%)] group-hover:duration-1000 group-hover:[transform:skew(-20deg)_translateX(150%)] transition-transform ease-in-out">
+        <div className="relative h-full w-12 bg-white/50 blur-[2px]" />
       </div>
-      <span className="relative z-10">{children}</span>
+      <span className="relative z-10 flex items-center gap-2 drop-shadow-sm">{children}</span>
     </button>
   );
-};
+});
+ShimmerButton.displayName = "ShimmerButton";
 
 export const BentoGrid = ({
   className,
@@ -130,7 +136,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-2xl group/bento hover:shadow-2xl transition duration-200 p-4 bg-white/5 backdrop-blur-md border border-white/10 justify-between flex flex-col space-y-4 overflow-hidden",
+        "row-span-1 rounded-2xl group/bento hover:shadow-2xl transition duration-200 p-4 bg-white/5 backdrop-blur-md justify-between flex flex-col space-y-4 overflow-hidden",
         className
       )}
     >
@@ -140,11 +146,11 @@ export const BentoGridItem = ({
       <div className="group-hover/bento:translate-x-2 transition duration-200 z-10">
         <div className="flex items-center gap-2 mb-2">
           {icon}
-          <h3 className="font-display font-bold text-amber-gold text-lg uppercase tracking-wider">
+          <h3 className="font-display font-bold text-kaf-gold text-lg uppercase tracking-wider">
             {title}
           </h3>
         </div>
-        <p className="font-normal text-foam/70 text-sm leading-relaxed">
+        <p className="font-normal text-kaf-cream/70 text-sm leading-relaxed">
           {description}
         </p>
       </div>
@@ -289,13 +295,13 @@ export const InfiniteMovingCards = ({
         {items.map((item, idx) => (
           <React.Fragment key={item.name + idx}>
             <li
-              className="w-[150px] max-w-full relative rounded-2xl border border-white/10 flex-shrink-0 px-8 py-6 md:w-[200px] bg-obsidian/50 flex items-center justify-center glassmorphism group"
+              className="w-[150px] max-w-full relative rounded-2xl flex-shrink-0 px-8 py-6 md:w-[200px] bg-kaf-dark/50 flex items-center justify-center glassmorphism group"
             >
-               <span className="text-xl font-display font-bold text-foam/60 group-hover:text-amber-gold transition-colors text-center">
+               <span className="text-xl font-display font-bold text-kaf-cream/60 group-hover:text-kaf-gold transition-colors text-center">
                  {item.name}
                </span>
             </li>
-            <div className="flex-shrink-0 text-amber-gold opacity-30">
+            <div className="flex-shrink-0 text-kaf-gold opacity-30">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
               </svg>
@@ -347,23 +353,23 @@ export const StickyScroll = ({
 
   return (
     <motion.div
-      className="h-[35rem] overflow-y-auto flex justify-center relative space-x-10 rounded-3xl p-10 scrollbar-hide bg-bottle-green/10 border border-foam/5 backdrop-blur-sm"
+      className="h-[35rem] overflow-y-auto flex justify-center relative space-x-10 rounded-3xl p-10 scrollbar-hide bg-kaf-gold/5 backdrop-blur-sm"
       ref={ref}
     >
-      <div className="absolute inset-0 bg-amber-gold/5 pointer-events-none" />
+      <div className="absolute inset-0 bg-kaf-gold/5 pointer-events-none" />
       <div className="div relative flex items-start px-4">
         <div className="max-w-2xl">
           {content.map((item, index) => (
             <div key={item.title + index} className="my-20">
               <div className="flex items-center gap-4 mb-4">
-                <div className="p-3 rounded-xl bg-amber-gold/10 text-amber-gold border border-amber-gold/20">
+                <div className="p-3 rounded-xl bg-kaf-gold/10 text-kaf-gold border border-kaf-gold/20">
                   {item.icon}
                 </div>
-                <h2 className="text-3xl font-display font-bold text-amber-gold uppercase tracking-tighter">
+                <h2 className="text-3xl font-display font-bold text-kaf-gold uppercase tracking-tighter">
                   {item.title}
                 </h2>
               </div>
-              <p className="text-lg text-foam/70 max-w-sm mt-6 leading-relaxed">
+              <p className="text-lg text-kaf-cream/70 max-w-sm mt-6 leading-relaxed">
                 {item.description}
               </p>
             </div>
@@ -373,7 +379,7 @@ export const StickyScroll = ({
       </div>
       <motion.div
         className={cn(
-          "hidden lg:block h-80 w-[400px] rounded-2xl bg-obsidian sticky top-10 overflow-hidden neobrutalism border-amber-gold",
+          "hidden lg:block h-80 w-[400px] rounded-2xl bg-kaf-dark sticky top-10 overflow-hidden neobrutalism border-kaf-gold",
           contentClassName
         )}
       >
@@ -420,12 +426,12 @@ export const WobbleCard = ({
         transition: "transform 0.1s ease-out",
       }}
       className={cn(
-        "mx-auto w-full bg-white/5 backdrop-blur-md relative rounded-3xl overflow-hidden border border-white/10",
+        "mx-auto w-full bg-white/5 backdrop-blur-md relative rounded-3xl overflow-hidden",
         containerClassName
       )}
     >
       <div
-        className="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(212,175,55,0.15),rgba(0,0,0,0))] sm:mx-0 sm:rounded-2xl"
+        className="relative h-full [background-image:radial-gradient(88%_100%_at_top,rgba(255,215,0,0.15),rgba(0,0,0,0))] sm:mx-0 sm:rounded-2xl"
       >
         <motion.div
           style={{
@@ -461,6 +467,23 @@ export const FloatingNav = ({
   const { pathname } = useLocation();
 
   const [visible, setVisible] = useState(true);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [lastScrollY, setLastScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setVisible(false);
+      } else {
+        setVisible(true);
+      }
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
 
   const isActive = (link: string) => {
     if (link === "/" && (pathname === "/" || pathname === "/index")) return true;
@@ -482,32 +505,75 @@ export const FloatingNav = ({
           duration: 0.2,
         }}
         className={cn(
-          "flex max-w-fit fixed top-10 inset-x-0 mx-auto rounded-full z-[5000] pr-2 pl-8 py-3 items-center justify-center space-x-6 glass-dark",
+          "flex max-w-fit fixed top-10 inset-x-0 mx-auto rounded-full z-[5000] pr-2 pl-8 py-3 items-center justify-center space-x-6 glass-dark border border-kaf-gold/20",
           className
         )}
       >
         {logo && (
-          <Link to="/" className="flex items-center gap-2 pr-4 border-r border-foam/10">
+          <Link to="/" className="flex items-center gap-2 pr-4">
             <img src={logo} alt="KAF Logo" className="h-8 w-auto object-contain" referrerPolicy="no-referrer" />
           </Link>
         )}
-        {navItems.map((navItem: any, idx: number) => (
-          <Link
-            key={`link=${idx}`}
-            to={navItem.link}
-            className={cn(
-              "relative items-center flex space-x-1 text-foam/70 hover:text-amber-gold transition-colors text-sm font-medium uppercase tracking-widest",
-              isActive(navItem.link) && "text-amber-gold after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-amber-gold after:rounded-full"
-            )}
-          >
-            <span className="block sm:hidden">{navItem.icon}</span>
-            <span className="hidden sm:block">{navItem.name}</span>
-          </Link>
-        ))}
-        <ShimmerButton className="h-10 text-xs px-6">
+        <div className="hidden md:flex space-x-6 items-center">
+          {navItems.map((navItem: any, idx: number) => (
+            <Link
+              key={`link=${idx}`}
+              to={navItem.link}
+              className={cn(
+                "relative items-center flex space-x-1 text-kaf-cream/70 hover:text-kaf-gold transition-colors text-sm font-medium uppercase tracking-widest",
+                isActive(navItem.link) && "text-kaf-gold after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-kaf-gold after:rounded-full"
+              )}
+            >
+              <span className="block sm:hidden">{navItem.icon}</span>
+              <span className="hidden sm:block">{navItem.name}</span>
+            </Link>
+          ))}
+        </div>
+        <ShimmerButton className="hidden md:flex h-10 text-xs px-6">
+          <MessageCircle size={16} />
           Peça no WhatsApp
         </ShimmerButton>
+        <button 
+          className="md:hidden text-kaf-gold p-2 mr-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
       </motion.div>
+
+      {/* Mobile Menu */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed top-28 inset-x-4 z-[4999] glass-dark border border-kaf-gold/20 rounded-2xl p-4 flex flex-col space-y-4 md:hidden"
+          >
+            {navItems.map((navItem: any, idx: number) => (
+              <Link
+                key={`mobile-link=${idx}`}
+                to={navItem.link}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className={cn(
+                  "block px-4 py-3 rounded-xl text-center text-sm font-medium uppercase tracking-widest transition-colors",
+                  isActive(navItem.link) 
+                    ? "bg-kaf-gold/10 text-kaf-gold border border-kaf-gold/20" 
+                    : "text-kaf-cream/70 hover:text-kaf-gold hover:bg-white/5"
+                )}
+              >
+                {navItem.name}
+              </Link>
+            ))}
+            <div className="pt-2 border-t border-kaf-gold/10">
+              <ShimmerButton className="w-full h-12 text-xs">
+                <MessageCircle size={16} />
+                Peça no WhatsApp
+              </ShimmerButton>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </AnimatePresence>
   );
 };
@@ -584,7 +650,7 @@ export const Lens = ({
       {children}
       {isHovering && (
         <div
-          className="pointer-events-none absolute z-50 rounded-full border-2 border-amber-gold/50 shadow-2xl overflow-hidden"
+          className="pointer-events-none absolute z-50 rounded-full border-2 border-kaf-gold/50 shadow-2xl overflow-hidden"
           style={{
             width: lensSize,
             height: lensSize,
@@ -646,49 +712,30 @@ export const FoamBubbles = ({ count = 60, className }: { count?: number, classNa
 
 export const BeerGlassEffect = () => {
   return (
-    <div className="fixed inset-0 pointer-events-none z-[40] overflow-hidden">
-      {/* Liquid Amber Tint - Brighter and more vivid */}
-      <div className="absolute inset-0 bg-gradient-to-b from-amber-gold/20 via-amber-gold/10 to-amber-gold/25 mix-blend-overlay" />
+    <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-kaf-dark">
+      {/* Dark Base with subtle gold tint */}
+      <div className="absolute inset-0 bg-gradient-to-b from-kaf-dark via-kaf-dark/90 to-kaf-dark" />
       
-      {/* Caustics / Light Rays Effect - Enhanced */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-20%,rgba(255,255,255,0.5)_0%,transparent_60%)]" />
-        <motion.div 
-          className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent_0%,transparent_10%,rgba(255,255,255,0.15)_15%,transparent_20%)] bg-[length:200%_200%]"
-          animate={{ 
-            backgroundPosition: ["0% 0%", "100% 100%"],
-            opacity: [0.2, 0.4, 0.2]
-          }}
-          transition={{ 
-            backgroundPosition: { duration: 15, repeat: Infinity, ease: "linear" },
-            opacity: { duration: 5, repeat: Infinity, ease: "easeInOut" }
-          }}
-        />
+      {/* Atmospheric Gold Accents */}
+      <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(170,93,0,0.3)_0%,transparent_70%)]" />
       </div>
 
-      {/* Global Rising Gas - More visible with glow */}
-      <FoamBubbles count={120} className="opacity-70" />
+      {/* Global Rising Gas - Bubbles */}
+      <FoamBubbles count={150} className="opacity-40" />
       
-      {/* Glass Reflections & Frosted Edges - More pronounced */}
-      <div className="absolute inset-0 border-[80px] border-white/15 blur-3xl rounded-[150px] opacity-40" />
-      <div className="absolute inset-0 shadow-[inset_0_0_200px_rgba(255,255,255,0.15)]" />
-      
-      {/* Liquid Ripples / Distortion (Simulated) */}
+      {/* Subtle Light Rays */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-tr from-amber-gold/5 to-transparent opacity-20"
-        animate={{
-          scale: [1, 1.05, 1],
-          rotate: [0, 1, 0],
+        className="absolute inset-0 bg-[repeating-linear-gradient(45deg,transparent_0%,transparent_10%,rgba(170,93,0,0.05)_15%,transparent_20%)] bg-[length:200%_200%]"
+        animate={{ 
+          backgroundPosition: ["0% 0%", "100% 100%"],
+          opacity: [0.1, 0.2, 0.1]
         }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut"
+        transition={{ 
+          backgroundPosition: { duration: 25, repeat: Infinity, ease: "linear" },
+          opacity: { duration: 10, repeat: Infinity, ease: "easeInOut" }
         }}
       />
-
-      {/* Foam Top Edge */}
-      <div className="absolute top-0 left-0 right-0 h-8 bg-white/15 blur-lg" />
     </div>
   );
 };

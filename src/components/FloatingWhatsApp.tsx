@@ -17,7 +17,7 @@ export const FloatingWhatsApp = () => {
       
       <MessageCircle className="w-8 h-8 relative z-10" />
       
-      <span className="absolute right-full mr-4 bg-obsidian text-foam text-xs font-bold px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-foam/10 shadow-xl">
+      <span className="absolute right-full mr-4 bg-kaf-dark text-kaf-cream text-xs font-bold px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none border border-kaf-cream/10 shadow-xl">
         Acesso Rápido
       </span>
     </motion.a>
