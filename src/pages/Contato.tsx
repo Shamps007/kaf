@@ -63,46 +63,35 @@ export const Contato = () => {
             </div>
           </div>
 
-          <div className="bg-secondary/5 p-8 md:p-12 rounded-3xl backdrop-blur-sm">
-            <h2 className="text-3xl font-display font-bold uppercase tracking-tighter text-kaf-cream mb-8">Solicite um <span className="text-kaf-gold italic">Orçamento</span></h2>
-            <form className="space-y-6">
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">Nome Completo</label>
-                <input 
-                  type="text" 
-                  placeholder="Seu nome"
-                  className="w-full bg-kaf-dark/50 px-6 py-4 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">WhatsApp</label>
-                <input 
-                  type="tel" 
-                  placeholder="(48) 99151-0012"
-                  className="w-full bg-kaf-dark/50 px-6 py-4 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all"
-                />
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">Segmento</label>
-                <select className="w-full bg-kaf-dark/50 px-6 py-4 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all appearance-none">
-                  <option>Bares & Restaurantes</option>
-                  <option>Eventos Particulares</option>
-                  <option>Eventos Corporativos</option>
-                  <option>Revenda</option>
-                </select>
-              </div>
-              <div className="space-y-2">
-                <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">Mensagem (Opcional)</label>
-                <textarea 
-                  rows={4}
-                  placeholder="Conte-nos um pouco sobre sua necessidade..."
-                  className="w-full bg-kaf-dark/50 px-6 py-4 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all"
-                />
-              </div>
-              <ShimmerButton className="w-full py-8 text-xl uppercase tracking-widest neo-shadow">
-                Enviar Solicitação
+          <div className="bg-secondary/5 p-8 md:p-12 rounded-3xl backdrop-blur-sm flex flex-col items-center justify-center text-center space-y-8 border border-kaf-gold/20 shadow-[0_0_50px_rgba(170,93,0,0.05)]">
+            <div className="space-y-4">
+              <h2 className="text-4xl md:text-5xl font-display font-bold uppercase tracking-tighter text-kaf-cream">
+                Peça seu Chopp <span className="text-kaf-gold italic">Agora</span>
+              </h2>
+              <p className="text-kaf-cream/60 text-lg max-w-md mx-auto">
+                Não perca tempo com formulários. Clique no botão abaixo e fale diretamente com nossa equipe de vendas pelo WhatsApp.
+              </p>
+            </div>
+            
+            <a 
+              href="https://wa.me/5548991510012" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-full max-w-md"
+            >
+              <ShimmerButton className="w-full py-12 text-2xl uppercase tracking-widest neo-shadow group shadow-[0_0_30px_rgba(212,175,55,0.3)] hover:shadow-[0_0_50px_rgba(212,175,55,0.5)] transition-all duration-500">
+                <div className="flex items-center justify-center gap-4 w-full">
+                  <MessageCircle className="w-8 h-8 group-hover:scale-110 transition-transform" />
+                  <span>Pedir Agora</span>
+                </div>
               </ShimmerButton>
-            </form>
+            </a>
+            
+            <div className="flex items-center gap-4 text-kaf-gold/60 text-xs uppercase tracking-widest font-bold">
+              <span className="w-12 h-[1px] bg-kaf-gold/20"></span>
+              Atendimento Imediato
+              <span className="w-12 h-[1px] bg-kaf-gold/20"></span>
+            </div>
           </div>
         </div>
       </section>

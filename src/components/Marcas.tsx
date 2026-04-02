@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import { cn } from "@/src/lib/utils";
 
 const BRANDS = [
   { src: "/amstel.png" },
@@ -7,7 +8,7 @@ const BRANDS = [
   { src: "/duck.png" },
   { src: "/heineken.png" },
   { src: "/serra-gerais.png" },
-  { src: "/zimmermann.png" },
+  { src: "/zimmermann.png", isLarge: true },
 ];
 
 export const Marcas = () => {
@@ -43,7 +44,10 @@ export const Marcas = () => {
               key={index}
               src={brand.src}
               alt="Marca Parceira"
-              className="h-20 md:h-28 w-auto object-contain shrink-0 select-none pointer-events-none transition-transform hover:scale-110 duration-300"
+              className={cn(
+                "h-20 md:h-28 w-auto object-contain shrink-0 select-none pointer-events-none transition-transform hover:scale-110 duration-300",
+                brand.isLarge && "h-28 md:h-40 scale-125"
+              )}
               referrerPolicy="no-referrer"
             />
           ))}

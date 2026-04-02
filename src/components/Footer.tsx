@@ -27,20 +27,12 @@ export default function Footer() {
           </div>
 
           {/* Coluna 3 */}
-          <div>
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
             <h3 className="text-sm font-bold text-white mb-6 uppercase tracking-widest">Contato</h3>
-            <ul className="space-y-4 text-gray-400 text-sm font-light">
+            <ul className="space-y-4 text-gray-400 text-sm font-light w-full">
               <li>📞 (48) 3344-4222</li>
               <li>📱 (48) 99151-0012</li>
               <li>✉️ contato@kafchopp.com.br</li>
-              <li className="mt-6">
-                <a href="https://wa.me/5548991510012" target="_blank" rel="noopener noreferrer">
-                  <ShimmerButton className="w-full h-12 text-xs">
-                    <MessageCircle size={16} />
-                    Fale no WhatsApp
-                  </ShimmerButton>
-                </a>
-              </li>
             </ul>
           </div>
 

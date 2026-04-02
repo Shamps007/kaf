@@ -80,7 +80,11 @@ export const Home = () => {
           />
           <BentoGridItem
             title="Marcas Premium"
-            description="Além das nossas joias da casa (KAF e Zimmermann), trabalhamos com as melhores marcas do mercado para garantir variedade ao seu cliente."
+            description={
+              <span>
+                Além das nossas joias da casa (KAF e <span className="text-kaf-gold font-bold">Zimmermann</span>), trabalhamos com as melhores marcas do mercado para garantir variedade ao seu cliente.
+              </span>
+            }
             header={
               <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center group-hover/bento:scale-110 transition-transform duration-500" />
             }
