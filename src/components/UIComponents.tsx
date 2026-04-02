@@ -74,14 +74,16 @@ export const TextGenerateEffect = ({
   );
 };
 
-export const ShimmerButton = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement>>(({
+export const ShimmerButton = React.forwardRef<HTMLButtonElement, React.ButtonHTMLAttributes<HTMLButtonElement> & { asChild?: boolean }>(({
   children,
   className,
-  ...props
+  asChild,
+  ...rest
 }, ref) => {
+  const Comp = asChild ? "span" : "button";
   return (
-    <button
-      ref={ref}
+    <Comp
+      ref={ref as any}
       className={cn(
         "group relative flex h-12 items-center justify-center overflow-hidden rounded-full px-8 font-bold text-[#331c00] transition-all duration-300 active:scale-95",
         "bg-gradient-to-r from-[#D4AF37] via-[#FFF380] to-[#D4AF37] bg-[length:200%_auto]",
@@ -89,13 +91,13 @@ export const ShimmerButton = React.forwardRef<HTMLButtonElement, React.ButtonHTM
         "border border-[#FFF8D6]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]",
         className
       )}
-      {...props}
+      {...rest}
     >
       <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-20deg)_translateX(-150%)] group-hover:duration-1000 group-hover:[transform:skew(-20deg)_translateX(150%)] transition-transform ease-in-out">
-        <div className="relative h-full w-12 bg-white/50 blur-[2px]" />
+        <div className="relative h-full w-12 bg-white/5 blur-[2px]" />
       </div>
       <span className="relative z-10 flex items-center gap-2 drop-shadow-sm">{children}</span>
-    </button>
+    </Comp>
   );
 });
 ShimmerButton.displayName = "ShimmerButton";
@@ -722,7 +724,7 @@ export const BeerGlassEffect = () => {
       </div>
 
       {/* Global Rising Gas - Bubbles */}
-      <FoamBubbles count={150} className="opacity-40" />
+      <FoamBubbles count={20} className="opacity-40" />
       
       {/* Subtle Light Rays */}
       <motion.div 

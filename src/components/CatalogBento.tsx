@@ -58,7 +58,6 @@ const FILTERS = ["Todos", "Pilsen", "IPA", "Weiss", "Vinho", "Equipamento", "Sup
 
 export const CatalogBento = () => {
   const [activeFilter, setActiveFilter] = useState("Todos");
-
   const filteredCatalog = CATALOG.filter(
     (item) => activeFilter === "Todos" || item.style === activeFilter
   );

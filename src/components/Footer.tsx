@@ -10,7 +10,7 @@ export default function Footer() {
           
           {/* Coluna 1 */}
           <div className="flex flex-col items-start">
-            <h2 className="text-4xl font-display font-bold text-[#AA5D00] mb-4 tracking-tighter">KAF</h2>
+            <img src="/kaf-branco.png" alt="KAF Logo" className="h-12 w-auto object-contain mb-6" referrerPolicy="no-referrer" />
             <p className="text-gray-400 text-sm leading-relaxed font-light">
               Tradição e excelência em distribuição de chopp e bebidas premium. Elevando o padrão do seu evento desde 1999.
             </p>

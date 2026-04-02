@@ -13,7 +13,7 @@ export const Header = () => {
   return (
     <FloatingNav 
       navItems={NAV_ITEMS} 
-      logo="/src/pages/public/kaf-branco.png" 
+      logo="/kaf-branco.png" 
     />
   );
 };

@@ -22,6 +22,9 @@ export const Hero = () => {
 
   useEffect(() => {
     if (!heroRef.current || !bgRef.current || !textRef.current) return;
+    
+    // Disable animation on small screens
+    if (window.innerWidth < 768) return;
 
     const tl = gsap.timeline({
       scrollTrigger: {
@@ -54,7 +57,7 @@ export const Hero = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative w-full min-h-[80vh] flex flex-col items-center justify-center pt-32 pb-24 px-4 z-[50] overflow-hidden"
+      className="relative w-full min-h-[80vh] flex flex-col items-center justify-center pt-32 md:pt-48 pb-24 md:pb-32 px-4 z-[50] overflow-hidden"
     >
       {/* Overlay Escuro */}
       <div className="absolute inset-0 bg-black/60 z-0 pointer-events-none"></div>
@@ -68,7 +71,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-kaf-gold/10 border border-kaf-gold/20 mb-8 glassmorphism shadow-[0_0_15px_rgba(255,215,0,0.2)]"
+          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-kaf-gold/10 border border-kaf-gold/20 mb-8 md:mb-12 glassmorphism shadow-[0_0_15px_rgba(255,215,0,0.2)]"
         >
           <Truck className="w-4 h-4 text-kaf-gold" />
           <span className="text-xs font-bold uppercase tracking-widest text-kaf-gold drop-shadow-sm">
@@ -80,7 +83,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-tighter leading-[0.9] mb-6 [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
+          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-tighter leading-[0.9] mb-6 md:mb-10 max-w-6xl mx-auto [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
         >
           A Tradição de 1999 encontra a <br className="hidden md:block" />
           <span className="text-kaf-gold italic font-display [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]">Perfeição do Chopp</span>
@@ -90,7 +93,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl md:text-2xl text-white mb-10 max-w-2xl mx-auto font-light [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
+          className="text-xl md:text-2xl text-white mb-10 md:mb-16 max-w-2xl md:max-w-4xl mx-auto font-light [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
         >
           Experiência premium em distribuição de bebidas. Elevando o padrão do seu evento com o melhor chopp da região.
         </motion.p>
@@ -99,11 +102,11 @@ export const Hero = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6"
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10"
         >
           <Dialog>
             <DialogTrigger asChild>
-              <ShimmerButton className="w-full sm:w-auto h-16 text-lg px-10">
+              <ShimmerButton asChild className="w-full sm:w-auto h-16 text-lg px-10">
                 <MessageCircle className="w-5 h-5" />
                 Solicitar Orçamento
               </ShimmerButton>
@@ -154,7 +157,7 @@ export const Hero = () => {
         </motion.div>
 
         {/* Stats Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 mt-24">
+        <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mt-24 md:mt-40">
           {[
             { label: "Anos de História", value: 25, suffix: "+" },
             { label: "Eventos Realizados", value: 5000, suffix: "+" },
