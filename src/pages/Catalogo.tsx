@@ -1,16 +1,11 @@
 import React from "react";
-import { Header } from "../components/Header";
-import Footer from "../components/Footer";
-import { BackgroundCerveja } from "../components/BackgroundCerveja";
 import { CatalogBento } from "../components/CatalogBento";
 
 export const Catalogo = () => {
   return (
     <div className="flex flex-col flex-grow">
-      <BackgroundCerveja />
-      <Header />
-      <div className="opacity-100 pt-20">
-        <section className="py-20 bg-transparent">
+      <div className="opacity-100 pt-12 md:pt-16">
+        <section id="catalogo" className="py-12 md:py-16 bg-transparent scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-8">
             Nosso <span className="text-kaf-gold italic">Catálogo</span>
@@ -21,11 +16,10 @@ export const Catalogo = () => {
         </div>
       </section>
 
-      <div className="pb-32">
+      <div className="pb-20">
         <CatalogBento />
       </div>
       </div>
-      <Footer />
     </div>
   );
 };

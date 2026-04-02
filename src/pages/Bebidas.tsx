@@ -1,17 +1,12 @@
 import React from "react";
-import { Header } from "../components/Header";
-import Footer from "../components/Footer";
-import { BackgroundCerveja } from "../components/BackgroundCerveja";
 import { ProductCarousel } from "../components/ProductCarousel";
 import { DrinksSection } from "../components/DrinksSection";
 
 export const Bebidas = () => {
   return (
     <div className="flex flex-col flex-grow">
-      <BackgroundCerveja />
-      <Header />
-      <div className="opacity-100 pt-20">
-        <section className="py-20 bg-transparent">
+      <div className="opacity-100 pt-12 md:pt-16">
+        <section id="bebidas" className="py-12 md:py-16 bg-transparent scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-8">
             Nossas <span className="text-kaf-gold italic">Bebidas</span>
@@ -26,11 +21,10 @@ export const Bebidas = () => {
         <ProductCarousel />
       </div>
 
-      <div className="pb-32">
+      <div className="pb-20">
         <DrinksSection />
       </div>
       </div>
-      <Footer />
     </div>
   );
 };

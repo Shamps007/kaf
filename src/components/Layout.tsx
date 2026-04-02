@@ -1,6 +1,8 @@
 import React from "react";
 import { FloatingWhatsApp } from "./FloatingWhatsApp";
 import { ScrollToTop } from "./ScrollToTop";
+import { Header } from "./Header";
+import { BackgroundCerveja } from "./BackgroundCerveja";
 import Footer from "./Footer";
 
 const NAV_ITEMS = [
@@ -15,7 +17,9 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="text-kaf-cream selection:bg-kaf-gold selection:text-kaf-dark relative font-sans dark bg-[#000000] overflow-x-hidden">
       <ScrollToTop />
-      <main className="min-h-screen relative z-10">
+      <BackgroundCerveja />
+      <Header />
+      <main className="relative z-10">
         {children}
       </main>
       <FloatingWhatsApp />

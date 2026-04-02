@@ -1,8 +1,6 @@
 import React from "react";
-import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { Marcas } from "../components/Marcas";
-import { BackgroundCerveja } from "../components/BackgroundCerveja";
 
 import { 
   Beer, 
@@ -39,16 +37,14 @@ const SettingsIcon = ({ className }: { className?: string }) => (
 export const Home = () => {
   return (
     <div className="flex flex-col flex-grow">
-      <BackgroundCerveja />
-      <Header />
       <Hero />
 
       {/* Marcas (Brand Marquee) */}
       <Marcas />
 
       {/* Business Verticals (Bento Grid) */}
-      <section id="servicos" className="py-32 px-4 bg-transparent relative z-10">
-        <div className="max-w-7xl mx-auto mb-20 text-center">
+      <section id="servicos" className="py-20 px-4 bg-transparent relative z-10 scroll-mt-24">
+        <div className="max-w-7xl mx-auto mb-16 text-center">
           <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6">
             Como Podemos <span className="text-kaf-gold italic">Ajudar?</span>
           </h2>
@@ -95,9 +91,9 @@ export const Home = () => {
       </section>
 
       {/* Operational Differentials */}
-      <section className="py-32 px-4 bg-transparent relative z-10">
+      <section className="py-20 px-4 bg-transparent relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20 text-center">
+          <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6">
               Vantagens de ser <span className="text-kaf-gold italic">Cliente KAF</span>
             </h2>
@@ -168,7 +164,7 @@ export const Home = () => {
       </section>
 
       {/* Human Element (Wobble Cards) */}
-      <section id="history" className="py-32 px-4 bg-transparent relative z-10">
+      <section id="history" className="py-20 px-4 bg-transparent relative z-10 scroll-mt-24">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <WobbleCard containerClassName="h-full bg-kaf-gold/5 border-kaf-gold/20">
             <div className="max-w-sm">

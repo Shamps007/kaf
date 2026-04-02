@@ -1,17 +1,12 @@
 import React from "react";
-import { Header } from "../components/Header";
-import Footer from "../components/Footer";
-import { BackgroundCerveja } from "../components/BackgroundCerveja";
 import { ShimmerButton } from "../components/UIComponents";
 import { MessageCircle, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 export const Contato = () => {
   return (
     <div className="flex flex-col flex-grow">
-      <BackgroundCerveja />
-      <Header />
-      <div className="opacity-100 pt-20">
-        <section className="py-20 bg-transparent">
+      <div className="opacity-100 pt-12 md:pt-16">
+        <section id="contato" className="py-12 md:py-16 bg-transparent scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-8">
             Fale <span className="text-kaf-gold italic">Conosco</span>
@@ -22,7 +17,7 @@ export const Contato = () => {
         </div>
       </section>
 
-      <section className="py-20 px-4 relative overflow-hidden bg-transparent">
+      <section className="py-12 md:py-16 px-4 relative overflow-hidden bg-transparent">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-kaf-gold/5 blur-[120px] rounded-full pointer-events-none" />
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10">
           
@@ -112,7 +107,6 @@ export const Contato = () => {
         </div>
       </section>
       </div>
-      <Footer />
     </div>
   );
 };

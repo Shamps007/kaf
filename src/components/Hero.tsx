@@ -57,7 +57,7 @@ export const Hero = () => {
     <section
       ref={heroRef}
       id="home"
-      className="relative w-full min-h-[80vh] flex flex-col items-center justify-center pt-32 md:pt-48 pb-24 md:pb-32 px-4 z-[50] overflow-hidden"
+      className="relative w-full min-h-[70vh] flex flex-col items-center justify-center pt-24 md:pt-32 pb-16 md:pb-20 px-4 z-[50] overflow-hidden"
     >
       {/* Overlay Escuro */}
       <div className="absolute inset-0 bg-black/60 z-0 pointer-events-none"></div>

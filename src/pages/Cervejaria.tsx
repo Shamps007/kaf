@@ -1,7 +1,4 @@
 import React from "react";
-import { Header } from "../components/Header";
-import Footer from "../components/Footer";
-import { BackgroundCerveja } from "../components/BackgroundCerveja";
 import { 
   Award, 
   Users, 
@@ -73,10 +70,8 @@ const OPERATIONAL_DIFFERENTIALS = [
 export const Cervejaria = () => {
   return (
     <div className="flex flex-col flex-grow">
-      <BackgroundCerveja />
-      <Header />
-      <div className="opacity-100 pt-20">
-        <section className="py-20 bg-transparent">
+      <div className="opacity-100 pt-12 md:pt-16">
+        <section id="historia" className="py-12 md:py-16 bg-transparent scroll-mt-24">
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-5xl md:text-7xl font-display font-bold uppercase tracking-tighter mb-8">
             Nossa <span className="text-kaf-gold italic">História</span>
@@ -88,7 +83,7 @@ export const Cervejaria = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-20 bg-transparent">
+      <section className="py-12 md:py-16 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8">
           {[
             { label: "Anos de História", value: 25, suffix: "+" },
@@ -110,7 +105,7 @@ export const Cervejaria = () => {
       </section>
 
       {/* Human Element (Wobble Cards) */}
-      <section className="py-32 px-4 bg-transparent">
+      <section className="py-20 px-4 bg-transparent">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
           <WobbleCard containerClassName="h-full bg-kaf-gold/5 border-kaf-gold/20">
             <div className="max-w-sm">
@@ -153,9 +148,9 @@ export const Cervejaria = () => {
       </section>
 
       {/* Operational Differentials (Sticky Scroll) */}
-      <section className="py-32 px-4 bg-transparent relative">
+      <section className="py-20 px-4 bg-transparent relative">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-20">
+          <div className="mb-16">
             <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6">
               Vantagens de ser <span className="text-kaf-gold italic">Cliente KAF</span>
             </h2>
@@ -167,7 +162,6 @@ export const Cervejaria = () => {
         </div>
       </section>
       </div>
-      <Footer />
     </div>
   );
 };
