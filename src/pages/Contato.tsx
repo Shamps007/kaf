@@ -33,8 +33,8 @@ export const Contato = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-bold uppercase tracking-widest text-kaf-cream mb-1">Telefone & WhatsApp</h4>
-                    <p className="text-kaf-cream/60">(48) 3333-3333</p>
-                    <p className="text-kaf-cream/60">(48) 99999-9999</p>
+                    <p className="text-kaf-cream/60">(48) 3344-4222</p>
+                    <p className="text-kaf-cream/60">(48) 99151-0012</p>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -53,10 +53,10 @@ export const Contato = () => {
             <div>
               <h4 className="text-sm font-bold uppercase tracking-widest text-kaf-cream mb-6">Siga-nos</h4>
               <div className="flex gap-4">
-                <a href="#" className="p-4 rounded-xl bg-kaf-cream/5 hover:bg-kaf-gold/20 transition-colors text-kaf-cream/70 hover:text-kaf-gold">
+                <a href="https://www.instagram.com/kafchoppexpress/" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-kaf-cream/5 hover:bg-kaf-gold/20 transition-colors text-kaf-cream/70 hover:text-kaf-gold">
                   <Instagram className="w-6 h-6" />
                 </a>
-                <a href="#" className="p-4 rounded-xl bg-kaf-cream/5 hover:bg-kaf-gold/20 transition-colors text-kaf-cream/70 hover:text-kaf-gold">
+                <a href="https://www.facebook.com/kafchoppexpress" target="_blank" rel="noopener noreferrer" className="p-4 rounded-xl bg-kaf-cream/5 hover:bg-kaf-gold/20 transition-colors text-kaf-cream/70 hover:text-kaf-gold">
                   <Facebook className="w-6 h-6" />
                 </a>
               </div>
@@ -78,7 +78,7 @@ export const Contato = () => {
                 <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">WhatsApp</label>
                 <input 
                   type="tel" 
-                  placeholder="(48) 99999-9999"
+                  placeholder="(48) 99151-0012"
                   className="w-full bg-kaf-dark/50 px-6 py-4 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all"
                 />
               </div>

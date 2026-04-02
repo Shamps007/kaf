@@ -136,7 +136,7 @@ export const Hero = () => {
                     <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">WhatsApp</label>
                     <input 
                       type="tel" 
-                      placeholder="(48) 99999-9999"
+                      placeholder="(48) 99151-0012"
                       className="w-full bg-kaf-dark/50 px-4 py-3 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all"
                     />
                   </div>
