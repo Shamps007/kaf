@@ -46,7 +46,7 @@ export const Marcas = () => {
               alt="Marca Parceira"
               className={cn(
                 "h-20 md:h-28 w-auto object-contain shrink-0 select-none pointer-events-none transition-transform hover:scale-110 duration-300",
-                brand.isLarge && "h-28 md:h-40 scale-125"
+                brand.isLarge && "h-40 md:h-64 scale-[2.5]"
               )}
               referrerPolicy="no-referrer"
             />

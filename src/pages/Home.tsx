@@ -57,7 +57,7 @@ export const Home = () => {
             title="Para o seu Bar ou Restaurante"
             description="Aumente seus lucros com nosso chopp. Fornecemos a chopeira em comodato, manutenção preventiva grátis e entrega programada. Seu estoque nunca fica vazio."
             header={
-              <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center group-hover/bento:scale-110 transition-transform duration-500" />
+              <img src="/bar.jpeg" alt="Para o seu Bar ou Restaurante" className="w-full h-full object-cover group-hover/bento:scale-105 transition-transform duration-500" />
             }
             icon={<Beer className="w-5 h-5 text-kaf-gold" />}
             className="md:col-span-2"
@@ -66,7 +66,7 @@ export const Home = () => {
             title="Para a sua Festa"
             description="Chopp gelado na porta de casa. Levamos a chopeira, instalamos, ensinamos a usar e buscamos depois. Você só se preocupa em curtir!"
             header={
-              <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center group-hover/bento:scale-110 transition-transform duration-500" />
+              <img src="/festa.jpeg" alt="Para a sua Festa" className="w-full h-full object-cover group-hover/bento:scale-105 transition-transform duration-500" />
             }
             icon={<Truck className="w-5 h-5 text-kaf-gold" />}
           />
@@ -74,7 +74,7 @@ export const Home = () => {
             title="Distribuição & Revenda"
             description="Seja um parceiro KAF. Amplo portfólio de marcas com preços competitivos para você revender e lucrar mais na sua região."
             header={
-              <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center group-hover/bento:scale-110 transition-transform duration-500" />
+              <img src="/kaf-distrib-1.JPEG" alt="Distribuição & Revenda" className="w-full h-full object-cover group-hover/bento:scale-105 transition-transform duration-500" />
             }
             icon={<Users className="w-5 h-5 text-kaf-gold" />}
           />
@@ -86,7 +86,7 @@ export const Home = () => {
               </span>
             }
             header={
-              <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center group-hover/bento:scale-110 transition-transform duration-500" />
+              <img src="https://images.unsplash.com/photo-1535958636474-b021ee887b13?auto=format&fit=crop&q=80&w=1000" alt="Marcas Premium" className="w-full h-full object-cover group-hover/bento:scale-105 transition-transform duration-500" />
             }
             icon={<Award className="w-5 h-5 text-kaf-gold" />}
             className="md:col-span-2"
