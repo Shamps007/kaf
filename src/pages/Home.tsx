@@ -74,7 +74,7 @@ export const Home = () => {
             title="Distribuição & Revenda"
             description="Seja um parceiro KAF. Amplo portfólio de marcas com preços competitivos para você revender e lucrar mais na sua região."
             header={
-              <img src="/kaf-distrib-1.JPEG" alt="Distribuição & Revenda" className="w-full h-full object-cover group-hover/bento:scale-105 transition-transform duration-500" />
+              <img src="/kaf-distrib-1.png" alt="Distribuição & Revenda" className="w-full h-full object-cover group-hover/bento:scale-105 transition-transform duration-500" />
             }
             icon={<Users className="w-5 h-5 text-kaf-gold" />}
           />
