@@ -85,7 +85,7 @@ export const ShimmerButton = React.forwardRef<HTMLButtonElement, React.ButtonHTM
     <Comp
       ref={ref as any}
       className={cn(
-        "group relative flex h-12 items-center justify-center overflow-hidden rounded-full px-8 font-bold text-[#331c00] transition-all duration-300 active:scale-95",
+        "group relative flex h-12 items-center justify-center overflow-hidden rounded-full px-8 font-display font-bold uppercase tracking-widest text-[#331c00] transition-all duration-300 active:scale-95",
         "bg-gradient-to-r from-[#D4AF37] via-[#FFF380] to-[#D4AF37] bg-[length:200%_auto]",
         "hover:bg-[position:right_center] hover:shadow-[0_0_20px_rgba(212,175,55,0.6)]",
         "border border-[#FFF8D6]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]",
@@ -531,10 +531,12 @@ export const FloatingNav = ({
             </Link>
           ))}
         </div>
-        <ShimmerButton className="hidden md:flex h-10 text-xs px-6">
-          <MessageCircle size={16} />
-          Peça no WhatsApp
-        </ShimmerButton>
+        <a href="https://wa.me/5548991510012" target="_blank" rel="noopener noreferrer">
+          <ShimmerButton className="hidden md:flex h-11 text-sm px-6 shadow-lg">
+            <MessageCircle size={18} />
+            Peça no WhatsApp
+          </ShimmerButton>
+        </a>
         <button 
           className="md:hidden text-kaf-gold p-2 mr-2"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -568,10 +570,12 @@ export const FloatingNav = ({
               </Link>
             ))}
             <div className="pt-2 border-t border-kaf-gold/10">
-              <ShimmerButton className="w-full h-12 text-xs">
-                <MessageCircle size={16} />
-                Peça no WhatsApp
-              </ShimmerButton>
+              <a href="https://wa.me/5548991510012" target="_blank" rel="noopener noreferrer" className="block w-full">
+                <ShimmerButton className="w-full h-12 text-sm shadow-lg">
+                  <MessageCircle size={18} />
+                  Peça no WhatsApp
+                </ShimmerButton>
+              </a>
             </div>
           </motion.div>
         )}
@@ -716,7 +720,7 @@ export const BeerGlassEffect = () => {
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-kaf-dark">
       {/* Dark Base with subtle gold tint */}
-      <div className="absolute inset-0 bg-gradient-to-b from-kaf-dark via-kaf-dark/90 to-kaf-dark" />
+      <div className="absolute inset-0 bg-kaf-dark" />
       
       {/* Atmospheric Gold Accents */}
       <div className="absolute inset-0 opacity-20">

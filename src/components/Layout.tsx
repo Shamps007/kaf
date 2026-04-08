@@ -9,13 +9,12 @@ const NAV_ITEMS = [
   { name: "Início", link: "/" },
   { name: "A Cervejaria", link: "/cervejaria" },
   { name: "Catálogo", link: "/catalogo" },
-  { name: "Bebidas", link: "/bebidas" },
   { name: "Contato", link: "/contato" },
 ];
 
 export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div className="text-kaf-cream selection:bg-kaf-gold selection:text-kaf-dark relative font-sans dark bg-[#000000] overflow-x-hidden">
+    <div className="text-kaf-cream selection:bg-kaf-gold selection:text-kaf-dark relative font-sans dark bg-kaf-dark overflow-x-hidden">
       <ScrollToTop />
       <BackgroundCerveja />
       <Header />

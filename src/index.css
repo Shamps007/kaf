@@ -51,7 +51,7 @@
 
 @layer base {
   html, body {
-    @apply h-full !bg-[#000000];
+    @apply h-full !bg-kaf-dark;
     margin: 0 !important;
     padding: 0 !important;
   }

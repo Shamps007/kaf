@@ -5,7 +5,7 @@ import { cn } from "@/src/lib/utils";
 const BRANDS = [
   { src: "/amstel.png" },
   { src: "/colina.png" },
-  { src: "/duck.png" },
+  { src: "/duck-1.png" },
   { src: "/heineken.png" },
   { src: "/serra-gerais.png" },
   { src: "/zimmermann.png", isLarge: true },
@@ -16,7 +16,7 @@ export const Marcas = () => {
   const duplicatedBrands = [...BRANDS, ...BRANDS];
 
   return (
-    <section className="flex flex-col items-center justify-center w-full py-24 relative z-10 bg-kaf-dark overflow-hidden">
+    <section className="flex flex-col items-center justify-center w-full py-24 relative z-10 bg-transparent overflow-hidden">
       {/* O TÍTULO ENTRA AQUI, ANTES DOS LOGOS */}
       <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center relative z-20 block w-full">
         Marcas Parceiras

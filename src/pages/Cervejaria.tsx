@@ -37,9 +37,7 @@ const OPERATIONAL_DIFFERENTIALS = [
     description: "Seu chopp gelado na porta de casa ou no seu evento, sem atrasos. Atendemos toda a Grande Florianópolis com frota própria e ágil.",
     icon: <Truck className="w-6 h-6" />,
     content: (
-      <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-        <Truck className="w-20 h-20 text-kaf-gold relative z-10" />
+      <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center flex items-center justify-center">
       </div>
     ),
   },
@@ -48,20 +46,16 @@ const OPERATIONAL_DIFFERENTIALS = [
     description: "Nossa equipe técnica faz toda a instalação e regulagem da chopeira no local. Você não precisa se preocupar com nada, apenas em servir.",
     icon: <SettingsIcon className="w-6 h-6" />,
     content: (
-      <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-        <SettingsIcon className="w-20 h-20 text-kaf-gold relative z-10" />
+      <div className="h-full w-full bg-[url('/barril-chopp.png')] bg-cover bg-center flex items-center justify-center">
       </div>
     ),
   },
   {
-    title: "Chopeiras de Alta Performance",
+    title: "Qualidade Premium",
     description: "Trabalhamos apenas com equipamentos novos e revisados, garantindo que o seu chopp saia na temperatura ideal do primeiro ao último copo.",
     icon: <Beer className="w-6 h-6" />,
     content: (
       <div className="h-full w-full bg-[url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center flex items-center justify-center">
-        <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-        <Beer className="w-20 h-20 text-kaf-gold relative z-10" />
       </div>
     ),
   },

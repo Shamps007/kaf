@@ -59,8 +59,7 @@ export const Hero = () => {
       id="home"
       className="relative w-full min-h-[70vh] flex flex-col items-center justify-center pt-24 md:pt-32 pb-16 md:pb-20 px-4 z-[50] overflow-hidden"
     >
-      {/* Overlay Escuro */}
-      <div className="absolute inset-0 bg-black/60 z-0 pointer-events-none"></div>
+      {/* Overlay Escuro removido para manter a cor contínua */}
 
       {/* Conteúdo */}
       <div
@@ -68,34 +67,30 @@ export const Hero = () => {
         className="relative z-10 flex flex-col items-center text-center w-full"
       >
         <motion.div 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-kaf-gold/10 border border-kaf-gold/20 mb-8 md:mb-12 glassmorphism shadow-[0_0_15px_rgba(255,215,0,0.2)]"
+          className="mb-12 md:mb-16"
         >
-          <Truck className="w-4 h-4 text-kaf-gold" />
-          <span className="text-xs font-bold uppercase tracking-widest text-kaf-gold drop-shadow-sm">
-            Tradição & Qualidade desde 1999
-          </span>
+          <img src="/kaf-branco.png" alt="KAF Chopp Express" className="h-28 md:h-40 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
         </motion.div>
         
         <motion.h1 
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-bold text-white uppercase tracking-tighter leading-[0.9] mb-6 md:mb-10 max-w-6xl mx-auto [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
+          className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white uppercase tracking-tighter leading-[0.9] mb-6 md:mb-8 max-w-6xl mx-auto [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
         >
-          A Tradição de 1999 encontra a <br className="hidden md:block" />
-          <span className="text-kaf-gold italic font-display [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]">Perfeição do Chopp</span>
+          Distribuidora de Chopp
         </motion.h1>
         
         <motion.p 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-xl md:text-2xl text-white mb-10 md:mb-16 max-w-2xl md:max-w-4xl mx-auto font-light [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
+          className="text-2xl md:text-4xl text-kaf-gold mb-16 md:mb-24 font-bold [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
         >
-          Experiência premium em distribuição de bebidas. Elevando o padrão do seu evento com o melhor chopp da região.
+          Qualidade que se destaca
         </motion.p>
         
         <motion.div 
@@ -106,7 +101,7 @@ export const Hero = () => {
         >
           <Dialog>
             <DialogTrigger asChild>
-              <ShimmerButton asChild className="w-full sm:w-auto h-16 text-lg px-10">
+              <ShimmerButton asChild className="w-full sm:w-auto h-16 text-lg px-12">
                 <MessageCircle className="w-5 h-5" />
                 Solicitar Orçamento
               </ShimmerButton>
@@ -147,13 +142,6 @@ export const Hero = () => {
               </div>
             </DialogContent>
           </Dialog>
-
-          <a
-            href="/catalogo"
-            className="w-full sm:w-auto px-10 py-5 rounded-full hover:bg-kaf-cream/10 transition-all font-bold uppercase tracking-widest text-sm glassmorphism text-center text-kaf-cream shadow-lg"
-          >
-            Explorar Catálogo
-          </a>
         </motion.div>
 
         {/* Stats Section */}

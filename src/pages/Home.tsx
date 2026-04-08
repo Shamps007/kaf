@@ -120,7 +120,7 @@ export const Home = () => {
               </div>
               <div className="flex-1 w-full">
                 <div className="relative h-[400px] w-full rounded-3xl overflow-hidden group shadow-[0_0_30px_rgba(255,215,0,0.1)] border border-kaf-gold/10">
-                  <img src="https://images.unsplash.com/photo-1586769852836-bc069f19e1b6?auto=format&fit=crop&q=80&w=1000" alt="Entrega Expressa" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&q=80&w=1000" alt="Entrega Expressa" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
               </div>
@@ -139,7 +139,7 @@ export const Home = () => {
               </div>
               <div className="flex-1 w-full">
                 <div className="relative h-[400px] w-full rounded-3xl overflow-hidden group shadow-[0_0_30px_rgba(255,215,0,0.1)] border border-kaf-gold/10">
-                  <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=1000" alt="Instalação Grátis" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" />
+                  <img src="/barril-chopp.png" alt="Instalação Grátis" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
               </div>
@@ -151,14 +151,14 @@ export const Home = () => {
                 <div className="w-16 h-16 rounded-full bg-kaf-gold/10 flex items-center justify-center border border-kaf-gold/20">
                   <Beer className="w-8 h-8 text-kaf-gold" />
                 </div>
-                <h3 className="text-3xl font-display font-bold text-kaf-gold uppercase tracking-tighter">Alta Performance</h3>
+                <h3 className="text-3xl font-display font-bold text-kaf-gold uppercase tracking-tighter">Qualidade Premium</h3>
                 <p className="text-kaf-cream/70 text-lg leading-relaxed">
                   Trabalhamos apenas com equipamentos novos e revisados, garantindo que o seu chopp saia na temperatura ideal do primeiro ao último copo.
                 </p>
               </div>
               <div className="flex-1 w-full">
                 <div className="relative h-[400px] w-full rounded-3xl overflow-hidden group shadow-[0_0_30px_rgba(255,215,0,0.1)] border border-kaf-gold/10">
-                  <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1000" alt="Alta Performance" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" />
+                  <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80&w=1000" alt="Qualidade Premium" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" loading="lazy" />
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700" />
                 </div>
               </div>
