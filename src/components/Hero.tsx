@@ -147,9 +147,9 @@ export const Hero = () => {
         {/* Stats Section */}
         <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mt-24 md:mt-40">
           {[
-            { label: "Anos de História", value: 25, suffix: "+" },
-            { label: "Eventos Realizados", value: 5000, suffix: "+" },
-            { label: "Barris Entregues", value: 15000, suffix: "+" },
+            { label: "Anos de História", value: 25, suffix: "" },
+            { label: "Eventos Realizados", value: 5000, suffix: "" },
+            { label: "Barris Entregues", value: 15000, suffix: "" },
             { label: "Clientes Satisfeitos", value: 98, suffix: "%" },
           ].map((stat, i) => (
             <div key={i} className="text-center">
