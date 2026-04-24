@@ -16,154 +16,83 @@ import {
 gsap.registerPlugin(ScrollTrigger);
 
 export const Hero = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const bgRef = useRef<HTMLDivElement>(null);
-  const textRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    if (!heroRef.current || !bgRef.current || !textRef.current) return;
-    
-    // Disable animation on small screens
-    if (window.innerWidth < 768) return;
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top bottom",
-        end: "bottom bottom",
-        scrub: true,
-      },
-    });
-
-    tl.to(bgRef.current, {
-      y: "30%",
-      ease: "none",
-    }).to(
-      textRef.current,
-      {
-        y: "0%",
-        opacity: 1,
-        ease: "none",
-      },
-      0
-    );
-
-    return () => {
-      ScrollTrigger.getAll().forEach(t => t.kill());
-    };
-  }, []);
-
   return (
     <section
-      ref={heroRef}
       id="home"
-      className="relative w-full min-h-[70vh] flex flex-col items-center justify-center pt-24 md:pt-32 pb-16 md:pb-20 px-4 z-[50] overflow-hidden"
+      className="relative w-full min-h-screen flex flex-col items-center justify-center pt-20 px-4 overflow-hidden"
     >
-      {/* Overlay Escuro removido para manter a cor contínua */}
+      {/* Background Image with Overlay */}
+      <div className="absolute inset-0 z-0">
+        <motion.img
+          initial={{ scale: 1.1 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 10, ease: "easeOut" }}
+          src="https://images.unsplash.com/photo-1566633806327-68e152aaf26d?auto=format&fit=crop&q=80&w=2000"
+          alt="Chopp Gelado"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-black/50" />
+      </div>
 
-      {/* Conteúdo */}
-      <div
-        ref={textRef}
-        className="relative z-10 flex flex-col items-center text-center w-full"
-      >
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-12 md:mb-16"
-        >
-          <img src="/kaf-branco.png" alt="KAF Chopp Express" className="h-28 md:h-40 object-contain drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]" />
-        </motion.div>
-        
-        <motion.h1 
+      {/* Content */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
+        <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white uppercase tracking-tighter leading-[0.9] mb-6 md:mb-8 max-w-6xl mx-auto [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="text-5xl md:text-8xl font-sans font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-2xl"
         >
-          Distribuidora de Chopp
+          Chopp Gelado na Hora Certa
         </motion.h1>
         
-        <motion.p 
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
-          className="text-2xl md:text-4xl text-kaf-gold mb-16 md:mb-24 font-bold [text-shadow:_3px_3px_12px_rgb(0_0_0_/_90%)]"
+          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          className="text-xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-medium"
         >
-          Qualidade que se destaca
+          Distribuição profissional de chopp para eventos, bares e restaurantes.
+          Qualidade garantida e entrega rápida.
         </motion.p>
         
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10"
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-6"
         >
-          <Dialog>
-            <DialogTrigger asChild>
-              <ShimmerButton asChild className="w-full sm:w-auto h-16 text-lg px-12">
-                <MessageCircle className="w-5 h-5" />
-                Solicitar Orçamento
-              </ShimmerButton>
-            </DialogTrigger>
-            <DialogContent
-              className="bg-kaf-dark border-kaf-gold/20 text-kaf-cream p-0 overflow-hidden sm:max-w-md"
-            >
-              <div className="p-6">
-                <DialogHeader>
-                  <DialogTitle className="text-2xl font-display font-bold text-kaf-gold uppercase tracking-tighter">
-                    Fale Conosco
-                  </DialogTitle>
-                  <DialogDescription className="text-kaf-cream/60">
-                    Preencha os dados rápidos e entraremos em contato via WhatsApp.
-                  </DialogDescription>
-                </DialogHeader>
-                <div className="mt-6 space-y-4">
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">Nome</label>
-                    <input 
-                      type="text" 
-                      placeholder="Seu nome"
-                      className="w-full bg-kaf-dark/50 px-4 py-3 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold uppercase tracking-widest text-kaf-cream/50">WhatsApp</label>
-                    <input 
-                      type="tel" 
-                      placeholder="(48) 99151-0012"
-                      className="w-full bg-kaf-dark/50 px-4 py-3 rounded-xl text-kaf-cream outline-none focus:border-kaf-gold transition-all"
-                    />
-                  </div>
-                  <ShimmerButton className="w-full h-14 mt-4 text-sm uppercase tracking-widest rounded-xl">
-                    Enviar
-                  </ShimmerButton>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
+          <a
+            href="https://wa.me/5548991510012"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full sm:w-auto bg-[#2563eb] text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-blue-600 transition-all shadow-xl hover:scale-105 active:scale-95"
+          >
+            Fazer Pedido Agora
+          </a>
+          <a
+            href="#servicos"
+            className="w-full sm:w-auto bg-white text-[#00357A] px-12 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition-all shadow-xl hover:scale-105 active:scale-95"
+          >
+            Saiba Mais
+          </a>
         </motion.div>
-
-        {/* Stats Section */}
-        <div className="w-full max-w-7xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 mt-24 md:mt-40">
-          {[
-            { label: "Anos de História", value: 25, suffix: "" },
-            { label: "Eventos Realizados", value: 5000, suffix: "" },
-            { label: "Barris Entregues", value: 15000, suffix: "" },
-            { label: "Clientes Satisfeitos", value: 98, suffix: "%" },
-          ].map((stat, i) => (
-            <div key={i} className="text-center">
-              <div className="text-4xl md:text-5xl font-display font-bold text-kaf-gold mb-2">
-                <NumberTicker value={stat.value} />
-                {stat.suffix}
-              </div>
-              <p className="text-xs uppercase tracking-widest text-kaf-cream/50 font-bold">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
+
+      {/* Subtle Scroll Indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 1 }}
+        className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+      >
+        <div className="w-6 h-10 border-2 border-white/20 rounded-full flex justify-center pt-2">
+          <motion.div
+            animate={{ y: [0, 12, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+            className="w-1.5 h-1.5 bg-white rounded-full"
+          />
+        </div>
+      </motion.div>
     </section>
   );
 };
