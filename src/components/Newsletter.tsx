@@ -39,7 +39,7 @@ export const Newsletter = () => {
               className="flex-1 bg-kaf-dark/50 px-6 py-4 rounded-full text-kaf-cream outline-none focus:border-kaf-gold transition-colors placeholder:text-kaf-cream/30"
               required
             />
-            <ShimmerButton className="py-4 px-8 rounded-full font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2 neo-shadow">
+            <ShimmerButton className="py-4 px-8 rounded-full font-bold uppercase tracking-widest text-sm flex items-center justify-center gap-2">
               Inscrever-se
               <ArrowRight className="w-4 h-4" />
             </ShimmerButton>

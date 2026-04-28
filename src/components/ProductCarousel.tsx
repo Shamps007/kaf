@@ -138,7 +138,7 @@ const BeerCard = ({ beer }: { beer: typeof BEERS[0]; key?: number | string }) =>
 
   return (
     <div
-      className="relative min-w-[280px] md:min-w-[320px] h-[500px] rounded-2xl overflow-hidden snap-center cursor-pointer group shadow-2xl"
+      className="relative min-w-[280px] md:min-w-[320px] h-[500px] rounded-2xl overflow-hidden snap-center cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -154,13 +154,13 @@ const BeerCard = ({ beer }: { beer: typeof BEERS[0]; key?: number | string }) =>
         referrerPolicy="no-referrer"
       />
       
-      {/* Floating Shadow Effect */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-black/80 blur-2xl rounded-[100%] group-hover:w-full transition-all duration-500 z-15" />
+      {/* Floating Light Effect (Replaces shadow) */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-white/5 blur-2xl rounded-[100%] group-hover:w-full transition-all duration-500 z-15" />
 
       {/* Layer 2: Content (Superior Layer) */}
       <div className="absolute inset-0 p-6 flex flex-col justify-end z-30">
-        <h3 className="text-2xl font-display font-bold text-kaf-cream mb-1 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{beer.name}</h3>
-        <p className="text-kaf-gold font-medium tracking-widest uppercase text-sm mb-4 drop-shadow-md">{beer.style}</p>
+        <h3 className="text-2xl font-display font-bold text-kaf-cream mb-1">{beer.name}</h3>
+        <p className="text-kaf-gold font-medium tracking-widest uppercase text-sm mb-4">{beer.style}</p>
 
         <AnimatePresence>
           {isHovered && (
@@ -170,20 +170,20 @@ const BeerCard = ({ beer }: { beer: typeof BEERS[0]; key?: number | string }) =>
               exit={{ opacity: 0, height: 0 }}
               className="overflow-hidden"
             >
-              <p className="text-kaf-cream/90 text-sm mb-6 leading-relaxed drop-shadow-sm">{beer.description}</p>
+              <p className="text-kaf-cream/90 text-sm mb-6 leading-relaxed">{beer.description}</p>
               
               <div className="grid grid-cols-3 gap-4 pt-4">
                 <div className="text-center">
                   <p className="text-[10px] uppercase tracking-widest text-kaf-cream/60 mb-1 font-bold">IBU</p>
-                  <p className="font-bold text-kaf-cream drop-shadow-md">{beer.ibu}</p>
+                  <p className="font-bold text-kaf-cream">{beer.ibu}</p>
                 </div>
                 <div className="text-center">
                   <p className="text-[10px] uppercase tracking-widest text-kaf-cream/60 mb-1 font-bold">ABV</p>
-                  <p className="font-bold text-kaf-cream drop-shadow-md">{beer.abv}</p>
+                  <p className="font-bold text-kaf-cream">{beer.abv}</p>
                 </div>
                 <div className="text-center">
                   <p className="text-[10px] uppercase tracking-widest text-kaf-cream/60 mb-1 font-bold">Temp</p>
-                  <p className="font-bold text-kaf-cream drop-shadow-md">{beer.temp}</p>
+                  <p className="font-bold text-kaf-cream">{beer.temp}</p>
                 </div>
               </div>
             </motion.div>

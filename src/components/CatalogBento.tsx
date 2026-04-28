@@ -54,7 +54,7 @@ export const CatalogBento = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div>
-            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tighter mb-6 text-kaf-cream">
+            <h2 className="text-4xl md:text-6xl font-display font-bold uppercase tracking-tight mb-6 text-kaf-cream">
               Catálogo <span className="text-kaf-gold italic">Comercial</span>
             </h2>
             <p className="text-kaf-cream/60 max-w-2xl">
@@ -71,7 +71,7 @@ export const CatalogBento = () => {
                 className={cn(
                   "px-4 py-2 rounded-full text-sm font-bold uppercase tracking-widest transition-all",
                   activeFilter === filter
-                    ? "bg-kaf-gold text-kaf-dark shadow-[0_0_15px_rgba(255,215,0,0.4)]"
+                    ? "bg-kaf-gold text-kaf-dark"
                     : "bg-kaf-dark/50 text-kaf-cream/60 hover:border-kaf-gold/50 hover:text-kaf-cream"
                 )}
               >
@@ -86,18 +86,18 @@ export const CatalogBento = () => {
           {filteredCatalog.map((item, index) => (
             <div
               key={item.id}
-              className="group relative rounded-3xl overflow-hidden bg-kaf-dark/80 border border-kaf-gold/20 hover:border-kaf-gold/60 transition-all duration-500 flex flex-col h-[460px] shadow-xl hover:shadow-kaf-gold/10"
+              className="group relative rounded-3xl overflow-hidden bg-kaf-dark/80 border border-kaf-gold/20 hover:border-kaf-gold/60 transition-all duration-500 flex flex-col h-[460px]"
             >
                 <div className="relative flex-1 overflow-hidden bg-gradient-to-b from-black/60 to-kaf-dark p-6 flex items-center justify-center">
                   <img
                     src={item.image}
                     alt={item.name}
-                    className="w-full h-full object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-700 z-10"
+                    className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-700 z-10"
                     style={{ filter: "contrast(1.1) brightness(1.1)" }}
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-4 left-4 z-20">
-                    <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-kaf-dark/80 backdrop-blur-md text-kaf-gold rounded-full border border-kaf-gold/30 shadow-lg">
+                    <span className="px-3 py-1 text-[10px] font-bold uppercase tracking-widest bg-kaf-dark/80 backdrop-blur-md text-kaf-gold rounded-full border border-kaf-gold/30">
                       {item.category}
                     </span>
                   </div>

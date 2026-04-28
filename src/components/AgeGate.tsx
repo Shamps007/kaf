@@ -43,13 +43,13 @@ export const AgeGate = ({ onAccept }: { onAccept: () => void }) => {
       className="fixed inset-0 z-[99999] flex items-center justify-center bg-kaf-dark/95 backdrop-blur-xl px-4"
     >
       <div
-        className="max-w-md w-full bg-kaf-dark border-2 border-kaf-gold/30 rounded-3xl p-8 md:p-12 text-center shadow-[0_0_50px_rgba(255,215,0,0.2)] relative overflow-hidden"
+        className="max-w-md w-full bg-kaf-dark border-2 border-kaf-gold/30 rounded-3xl p-8 md:p-12 text-center relative overflow-hidden"
       >
         {/* Decorative Top Border */}
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-kaf-gold to-transparent" />
         
         <div className="flex justify-center mb-8">
-          <div className="w-20 h-20 rounded-full bg-kaf-gold/10 border border-kaf-gold/20 flex items-center justify-center shadow-[0_0_20px_rgba(255,215,0,0.1)]">
+          <div className="w-20 h-20 rounded-full bg-kaf-gold/10 border border-kaf-gold/20 flex items-center justify-center">
             <Beer className="w-10 h-10 text-kaf-gold" />
           </div>
         </div>

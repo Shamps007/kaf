@@ -18,7 +18,7 @@ export const Marcas = () => {
   return (
     <section className="flex flex-col items-center justify-center w-full py-24 relative z-10 bg-transparent overflow-hidden">
       {/* O TÍTULO ENTRA AQUI, ANTES DOS LOGOS */}
-      <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 text-center relative z-20 block w-full">
+      <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-12 text-center relative z-20 block w-full uppercase tracking-tighter">
         Marcas Parceiras
       </h2>
 

@@ -138,7 +138,7 @@ const DrinkCard = ({ drink }: { drink: typeof DRINKS[0]; key?: number | string }
 
   return (
     <div
-      className="relative min-w-[280px] md:min-w-[320px] h-[500px] rounded-2xl overflow-hidden snap-center cursor-pointer group shadow-2xl"
+      className="relative min-w-[280px] md:min-w-[320px] h-[500px] rounded-2xl overflow-hidden snap-center cursor-pointer group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -154,17 +154,17 @@ const DrinkCard = ({ drink }: { drink: typeof DRINKS[0]; key?: number | string }
         referrerPolicy="no-referrer"
       />
       
-      {/* Floating Shadow Effect */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-black/80 blur-2xl rounded-[100%] group-hover:w-full transition-all duration-500 z-15" />
+      {/* Floating Light Effect (Replaces shadow) */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-12 bg-white/5 blur-2xl rounded-[100%] group-hover:w-full transition-all duration-500 z-15" />
 
       {/* Layer 2: Content (Superior Layer) */}
       <div className="absolute inset-0 p-6 flex flex-col justify-end z-30">
-        <div className="mb-4 w-10 h-10 rounded-full bg-kaf-gold/20 flex items-center justify-center border border-kaf-gold/40 shadow-lg">
+        <div className="mb-4 w-10 h-10 rounded-full bg-kaf-gold/20 flex items-center justify-center border border-kaf-gold/40">
           <Droplets className="w-5 h-5 text-kaf-gold" />
         </div>
         
-        <h3 className="text-2xl font-display font-bold text-kaf-cream mb-1 uppercase tracking-tight drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">{drink.name}</h3>
-        <p className="text-kaf-gold font-medium tracking-widest uppercase text-xs mb-4 drop-shadow-md">{drink.style}</p>
+        <h3 className="text-2xl font-display font-bold text-kaf-cream mb-1 uppercase tracking-tight">{drink.name}</h3>
+        <p className="text-kaf-gold font-medium tracking-widest uppercase text-xs mb-4">{drink.style}</p>
 
         <AnimatePresence>
           {isHovered && (
@@ -174,20 +174,20 @@ const DrinkCard = ({ drink }: { drink: typeof DRINKS[0]; key?: number | string }
               exit={{ opacity: 0, height: 0 }}
               className="overflow-hidden"
             >
-              <p className="text-kaf-cream/90 text-sm mb-6 leading-relaxed font-light italic drop-shadow-sm">{drink.description}</p>
+              <p className="text-kaf-cream/90 text-sm mb-6 leading-relaxed font-light italic">{drink.description}</p>
               
               <div className="grid grid-cols-3 gap-4 pt-4">
                 <div className="text-center">
                   <p className="text-[9px] uppercase tracking-widest text-kaf-cream/60 mb-1 font-bold">Calorias</p>
-                  <p className="text-xs font-bold text-kaf-cream drop-shadow-md">{drink.calories}</p>
+                  <p className="text-xs font-bold text-kaf-cream">{drink.calories}</p>
                 </div>
                 <div className="text-center">
                   <p className="text-[9px] uppercase tracking-widest text-kaf-cream/60 mb-1 font-bold">Açúcar</p>
-                  <p className="text-xs font-bold text-kaf-cream drop-shadow-md">{drink.sugar}</p>
+                  <p className="text-xs font-bold text-kaf-cream">{drink.sugar}</p>
                 </div>
                 <div className="text-center">
                   <p className="text-[9px] uppercase tracking-widest text-kaf-cream/60 mb-1 font-bold">Temp</p>
-                  <p className="text-xs font-bold text-kaf-cream drop-shadow-md">{drink.temp}</p>
+                  <p className="text-xs font-bold text-kaf-cream">{drink.temp}</p>
                 </div>
               </div>
             </motion.div>

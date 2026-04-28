@@ -40,7 +40,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-5xl md:text-8xl font-sans font-bold text-white mb-8 leading-[1.1] tracking-tight drop-shadow-2xl"
+          className="text-5xl md:text-8xl font-display font-semibold text-white mb-8 leading-[1.1]"
         >
           Chopp Gelado na Hora Certa
         </motion.h1>
@@ -49,7 +49,7 @@ export const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-medium"
+          className="text-xl md:text-3xl text-white/90 mb-12 max-w-4xl mx-auto leading-relaxed font-normal"
         >
           Distribuição profissional de chopp para eventos, bares e restaurantes.
           Qualidade garantida e entrega rápida.
@@ -65,13 +65,13 @@ export const Hero = () => {
             href="https://wa.me/5548991510012"
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full sm:w-auto bg-[#2563eb] text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-blue-600 transition-all shadow-xl hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto bg-[#2563eb] text-white px-12 py-5 rounded-full font-bold text-xl hover:bg-blue-600 transition-all hover:scale-105 active:scale-95"
           >
             Fazer Pedido Agora
           </a>
           <a
             href="#servicos"
-            className="w-full sm:w-auto bg-white text-[#00357A] px-12 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition-all shadow-xl hover:scale-105 active:scale-95"
+            className="w-full sm:w-auto bg-white text-[#00357A] px-12 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition-all hover:scale-105 active:scale-95"
           >
             Saiba Mais
           </a>

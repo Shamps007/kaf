@@ -87,8 +87,8 @@ export const ShimmerButton = React.forwardRef<HTMLButtonElement, React.ButtonHTM
       className={cn(
         "group relative flex h-12 items-center justify-center overflow-hidden rounded-full px-8 font-display font-bold uppercase tracking-widest text-[#331c00] transition-all duration-300 active:scale-95",
         "bg-gradient-to-r from-[#D4AF37] via-[#FFF380] to-[#D4AF37] bg-[length:200%_auto]",
-        "hover:bg-[position:right_center] hover:shadow-[0_0_20px_rgba(212,175,55,0.6)]",
-        "border border-[#FFF8D6]/60 shadow-[inset_0_1px_0_rgba(255,255,255,0.8)]",
+        "hover:bg-[position:right_center]",
+        "border border-[#FFF8D6]/60",
         className
       )}
       {...rest}
@@ -96,7 +96,7 @@ export const ShimmerButton = React.forwardRef<HTMLButtonElement, React.ButtonHTM
       <div className="absolute inset-0 flex h-full w-full justify-center [transform:skew(-20deg)_translateX(-150%)] group-hover:duration-1000 group-hover:[transform:skew(-20deg)_translateX(150%)] transition-transform ease-in-out">
         <div className="relative h-full w-12 bg-white/5 blur-[2px]" />
       </div>
-      <span className="relative z-10 flex items-center gap-2 drop-shadow-sm">{children}</span>
+      <span className="relative z-10 flex items-center gap-2">{children}</span>
     </Comp>
   );
 });
@@ -138,11 +138,11 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 rounded-2xl group/bento hover:shadow-2xl transition duration-500 p-6 bg-white border border-gray-100 flex flex-col gap-6 overflow-hidden",
+        "row-span-1 rounded-2xl group/bento transition duration-500 p-6 bg-white border border-gray-100 flex flex-col gap-6 overflow-hidden",
         className
       )}
     >
-      <div className="relative w-full flex-1 min-h-0 overflow-hidden rounded-xl shadow-inner">
+      <div className="relative w-full flex-1 min-h-0 overflow-hidden rounded-xl">
         {header}
       </div>
       <div className="group-hover/bento:translate-x-1 transition duration-500 z-10 shrink-0">
@@ -150,7 +150,7 @@ export const BentoGridItem = ({
           <div className="p-2 rounded-lg bg-[#00357A]/5">
             {icon}
           </div>
-          <h3 className="font-sans font-extrabold text-[#00357A] text-xl uppercase tracking-tight italic">
+          <h3 className="font-display font-bold text-[#00357A] text-xl uppercase tracking-tight italic">
             {title}
           </h3>
         </div>
@@ -534,7 +534,7 @@ export const FloatingNav = ({
           ))}
         </div>
         <a href="https://wa.me/5548991510012" target="_blank" rel="noopener noreferrer">
-          <ShimmerButton className="hidden md:flex h-11 text-sm px-6 shadow-lg">
+          <ShimmerButton className="hidden md:flex h-11 text-sm px-6">
             <MessageCircle size={18} />
             Peça no WhatsApp
           </ShimmerButton>
@@ -573,7 +573,7 @@ export const FloatingNav = ({
             ))}
             <div className="pt-2 border-t border-kaf-gold/10">
               <a href="https://wa.me/5548991510012" target="_blank" rel="noopener noreferrer" className="block w-full">
-                <ShimmerButton className="w-full h-12 text-sm shadow-lg">
+                <ShimmerButton className="w-full h-12 text-sm">
                   <MessageCircle size={18} />
                   Peça no WhatsApp
                 </ShimmerButton>
@@ -658,7 +658,7 @@ export const Lens = ({
       {children}
       {isHovering && (
         <div
-          className="pointer-events-none absolute z-50 rounded-full border-2 border-kaf-gold/50 shadow-2xl overflow-hidden"
+          className="pointer-events-none absolute z-50 rounded-full border-2 border-kaf-gold/50 overflow-hidden"
           style={{
             width: lensSize,
             height: lensSize,
@@ -693,7 +693,7 @@ export const FoamBubbles = ({ count = 60, className }: { count?: number, classNa
       {[...Array(count)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-white/20 shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+          className="absolute rounded-full bg-white/20"
           style={{
             width: Math.random() * 8 + 2,
             height: Math.random() * 8 + 2,

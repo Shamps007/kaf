@@ -14,7 +14,7 @@ export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[5000] bg-[#00357A] border-b border-white/10 shadow-lg">
+    <header className="fixed top-0 left-0 right-0 z-[5000] bg-[#00357A] border-b border-white/10">
       <div className="max-w-7xl mx-auto px-4 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center">
           <img src="/kaf-branco.png" alt="KAF Chopp Express" className="h-10 md:h-12 w-auto object-contain" />
@@ -38,7 +38,7 @@ export const Header = () => {
             href="https://wa.me/5548991510012"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden sm:block bg-white text-[#00357A] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-gray-100 transition-colors shadow-sm whitespace-nowrap"
+            className="hidden sm:block bg-white text-[#00357A] px-6 py-2.5 rounded-full font-bold text-sm hover:bg-gray-100 transition-colors whitespace-nowrap"
           >
             Solicitar Orçamento
           </a>
@@ -55,7 +55,7 @@ export const Header = () => {
 
       {/* Mobile Menu overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 right-0 bg-[#00357A] border-t border-white/10 flex flex-col p-6 gap-6 shadow-2xl animate-in slide-in-from-top duration-300">
+        <div className="md:hidden absolute top-20 left-0 right-0 bg-[#00357A] border-t border-white/10 flex flex-col p-6 gap-6 animate-in slide-in-from-top duration-300">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.name}

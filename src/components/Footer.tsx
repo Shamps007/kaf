@@ -20,7 +20,7 @@ export default function Footer() {
 
           {/* Coluna 2 */}
           <div>
-            <h3 className="text-sm font-bold text-white mb-8 uppercase tracking-widest text-[#2563eb]">Atendimento</h3>
+            <h3 className="font-display text-sm font-bold text-white mb-8 uppercase tracking-widest text-[#2563eb]">Atendimento</h3>
             <ul className="space-y-4 text-white/70 text-base font-medium">
               <li><span className="text-white font-bold">Seg - Sex:</span> 08:00 - 18:00</li>
               <li><span className="text-white font-bold">Sábado:</span> 09:00 - 14:00</li>
@@ -30,7 +30,7 @@ export default function Footer() {
 
           {/* Coluna 3 */}
           <div className="flex flex-col items-center md:items-start text-center md:text-left">
-            <h3 className="text-sm font-bold text-white mb-8 uppercase tracking-widest text-[#2563eb]">Contato</h3>
+            <h3 className="font-display text-sm font-bold text-white mb-8 uppercase tracking-widest text-[#2563eb]">Contato</h3>
             <ul className="space-y-4 text-white/70 text-base font-medium w-full">
               <li>📞 (48) 3344-4222</li>
               <li>📱 (48) 99151-0012</li>
